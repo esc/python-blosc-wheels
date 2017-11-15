@@ -152,7 +152,7 @@ before_install:
     - source multibuild/common_utils.sh
     - source multibuild/travis_steps.sh
     # Get some info about the machine
-    - echo $HOSTNAME
+    - uname -a
     - ls /lib/x86_64-linux-gnu
     - ldd -v /lib/x86_64-linux-gnu/libc.so.*
     - gcc --version
