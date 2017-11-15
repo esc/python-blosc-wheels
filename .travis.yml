@@ -154,7 +154,7 @@ before_install:
     # Get some info about the machine
     - uname -a
     - ls /lib/x86_64-linux-gnu
-    - ldd -v /lib/x86_64-linux-gnu/libc.so.*
+    - grep -R "lldiv" /usr/include
     - gcc --version
     # Do pre-install steps
     - before_install
