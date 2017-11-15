@@ -75,7 +75,10 @@ install:
 
   - python -m pip install --upgrade pip
   # Pin wheel to 0.26 to avoid Windows ABI tag for built wheel
-  - pip install wheel==0.26
+  # - pip install wheel==0.26
+  # RAM: let's not pin wheel, and make sure pip is new
+  - python -m pip install --upgrade pip
+  - pip install wheel
   - git submodule update --init
 
 build_script:
@@ -89,7 +92,7 @@ build_script:
 
 test_script:
   # Run some tests
-  - pip install nose
+  - pip install nose numpy
   - mkdir tmp_for_tests
   - cd tmp_for_tests
   - nosetests blosc
