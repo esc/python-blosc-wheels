@@ -28,7 +28,7 @@ matrix:
           sources:
             - ubuntu-toolchain-r-test
           packages:
-            - gcc-5 
+            - gcc-5 g++-5
       env:
         - MATRIX_EVAL="CC=gcc-5 -std=c++11 && CXX=g++-5"
         - MB_PYTHON_VERSION=2.7
@@ -38,7 +38,7 @@ matrix:
           sources:
             - ubuntu-toolchain-r-test
           packages:
-            - gcc-5
+            - gcc-5  g++-5
       env:
         - MATRIX_EVAL="CC=gcc-5 -std=c++11 && CXX=g++-5"
         - MB_PYTHON_VERSION=2.7
@@ -49,7 +49,7 @@ matrix:
           sources:
             - ubuntu-toolchain-r-test
           packages:
-            - gcc-5
+            - gcc-5  g++-5
       env:
         - MATRIX_EVAL="CC=gcc-5 -std=c++11 && CXX=g++-5"
         - MB_PYTHON_VERSION=2.7
@@ -60,7 +60,7 @@ matrix:
           sources:
             - ubuntu-toolchain-r-test
           packages:
-            - gcc-5
+            - gcc-5  g++-5
       env:
         - MATRIX_EVAL="CC=gcc-5 -std=c++11 && CXX=g++-5"
         - MB_PYTHON_VERSION=2.7
@@ -72,7 +72,7 @@ matrix:
           sources:
             - ubuntu-toolchain-r-test
           packages:
-            - gcc-5
+            - gcc-5  g++-5
       env:
         - MATRIX_EVAL="CC=gcc-5 -std=c++11 && CXX=g++-5"
         - MB_PYTHON_VERSION=3.4
@@ -82,7 +82,7 @@ matrix:
           sources:
             - ubuntu-toolchain-r-test
           packages:
-            - gcc-5
+            - gcc-5  g++-5
       env:
         - MATRIX_EVAL="CC=gcc-5 -std=c++11 && CXX=g++-5"
         - MB_PYTHON_VERSION=3.4
@@ -93,7 +93,7 @@ matrix:
           sources:
             - ubuntu-toolchain-r-test
           packages:
-            - gcc-5
+            - gcc-5  g++-5
       env:
         - MATRIX_EVAL="CC=gcc-5 -std=c++11 && CXX=g++-5"
         - MB_PYTHON_VERSION=3.5
@@ -103,7 +103,7 @@ matrix:
           sources:
             - ubuntu-toolchain-r-test
           packages:
-            - gcc-5
+            - gcc-5  g++-5
       env:
         - MATRIX_EVAL="CC=gcc-5 -std=c++11 && CXX=g++-5"
         - MB_PYTHON_VERSION=3.5
@@ -114,7 +114,7 @@ matrix:
           sources:
             - ubuntu-toolchain-r-test
           packages:
-            - gcc-5
+            - gcc-5  g++-5
       env:
         - MATRIX_EVAL="CC=gcc-5 -std=c++11 && CXX=g++-5"
         - MB_PYTHON_VERSION=3.6
@@ -124,7 +124,7 @@ matrix:
           sources:
             - ubuntu-toolchain-r-test
           packages:
-            - gcc-5
+            - gcc-5  g++-5
       env:
         - MATRIX_EVAL="CC=gcc-5 -std=c++11 && CXX=g++-5"
         - MB_PYTHON_VERSION=3.6
@@ -151,7 +151,12 @@ before_install:
     - TEST_DEPENDS="$NP_TEST_DEP"
     - source multibuild/common_utils.sh
     - source multibuild/travis_steps.sh
+    # Get some info about the machine
+    - echo $HOSTNAME
+    - ls /lib/x86_64-linux-gnu
+    - ldd -v /lib/x86_64-linux-gnu/libc.so.*
     - gcc --version
+    # Do pre-install steps
     - before_install
 
 install:
