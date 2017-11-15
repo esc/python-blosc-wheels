@@ -153,8 +153,7 @@ before_install:
     - source multibuild/travis_steps.sh
     # Get some info about the machine
     - uname -a
-    - ls /lib/x86_64-linux-gnu
-    - grep -R "lldiv" /usr/include
+    - grep -R "lldiv" /usr/include/c++
     - gcc --version
     # Do pre-install steps
     - before_install
