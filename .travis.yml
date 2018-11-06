@@ -1,7 +1,7 @@
 env:
   global:
       - REPO_DIR=python-blosc
-      - BUILD_COMMIT=v1.5.1
+      - BUILD_COMMIT=v1.6.2
       - PLAT=x86_64
       - UNICODE_WIDTH=32
       - WHEELHOUSE_UPLOADER_USERNAME=travis-worker
